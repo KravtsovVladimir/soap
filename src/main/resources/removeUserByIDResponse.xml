@@ -1,0 +1,3 @@
+<RemoveUserByIDResponse xmlns="http://com/soap">
+    <isRemoved>true</isRemoved>
+</RemoveUserByIDResponse>

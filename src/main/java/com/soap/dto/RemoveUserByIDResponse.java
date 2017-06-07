@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="isRemoved" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,27 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "isRemoved"
 })
-@XmlRootElement(name = "GetUserByIDRequest")
-public class GetUserByIDRequest {
+@XmlRootElement(name = "RemoveUserByIDResponse")
+public class RemoveUserByIDResponse {
 
-    protected int id;
+    protected boolean isRemoved;
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the isRemoved property.
      * 
      */
-    public int getId() {
-        return id;
+    public boolean isIsRemoved() {
+        return isRemoved;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the isRemoved property.
      * 
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setIsRemoved(boolean value) {
+        this.isRemoved = value;
     }
 
 }

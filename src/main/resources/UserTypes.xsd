@@ -2,6 +2,18 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://com/soap"
            xmlns:soap="http://com/soap">
 
+    <xs:element name="GetAllUsersRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="GetAllUsersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="soap:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="GetUserByIDRequest">
         <xs:complexType>
             <xs:sequence>
@@ -18,6 +30,38 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="RemoveUserByIDRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RemoveUserByIDResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isRemoved" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SaveUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="soap:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SaveUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isCreated" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="user">
         <xs:complexType>
             <xs:sequence>
@@ -25,7 +69,6 @@
                 <xs:element name="age" type="xs:int"/>
                 <xs:element name="name" type="xs:string"/>
                 <xs:element name="email" type="xs:string"/>
-                <xs:element ref="soap:event"/>
                 <xs:element maxOccurs="unbounded" ref="soap:event"/>
             </xs:sequence>
         </xs:complexType>

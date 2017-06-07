@@ -34,12 +34,27 @@ public class Repository {
         users.add(user2);
     }
 
-    public void save(User user) {
-        users.add(user);
+    public boolean save(User user) {
+        try {
+            users.add(user);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
-    public void remove(User user) {
-        users.remove(user);
+    public boolean remove(int id) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUid() == id) {
+                try {
+                    users.remove(i);
+                    return true;
+                } catch (Exception ex) {
+                    return false;
+                }
+            }
+        }
+        throw new NoSuchElementException("No user with this id");
     }
 
     public User getById(int id) {
@@ -49,15 +64,6 @@ public class Repository {
             }
         }
         throw new NoSuchElementException("No user with this id");
-    }
-
-    public User getByEmail(String email) {
-        for (User user : users) {
-            if (user.getEmail().equalsIgnoreCase(email)) {
-                return user;
-            }
-        }
-        throw new NoSuchElementException("No user with this email");
     }
 
     public List<User> getAll() {

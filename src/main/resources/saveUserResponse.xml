@@ -1,0 +1,3 @@
+<SaveUserResponse xmlns="http://com/soap">
+    <isCreated>true</isCreated>
+</SaveUserResponse>

@@ -1,0 +1,16 @@
+<SaveUserRequest xmlns="http://com/soap">
+    <user>
+        <uid>123</uid>
+        <age>23</age>
+        <name>name</name>
+        <email>email</email>
+        <event>
+            <title>title</title>
+            <message>message</message>
+        </event>
+        <event>
+            <title>title2</title>
+            <message>message2</message>
+        </event>
+    </user>
+</SaveUserRequest>
