@@ -1,0 +1,3 @@
+<GetUserByIDRequest xmlns="http://com/soap">
+    <id>123</id>
+</GetUserByIDRequest>
